@@ -1,0 +1,21 @@
+baseurl = "http://tituschow.github.io/"
+languageCode = "en-us"
+title = "Titus Chow"
+description = "herpdederp"
+
+[[menu.main]]
+	name = "main"
+	url = "/"
+	weight = -200
+[[menu.main]]
+	name = "projects"
+	url = "/projects/"
+	weight = -180
+[[menu.main]]
+	name = "about"
+	url = "/about/"
+	weight = -160
+[[menu.main]]
+	name = "contact"
+	url = "/contact/"
+	weight = -140
