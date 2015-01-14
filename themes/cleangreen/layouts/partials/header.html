@@ -2,15 +2,16 @@
 	{{ partial "logo.html" . }}
 	<nav role="navigation">
 		<ul>
-			{{ if and .IsNode (eq .Url "/") }}
+			{{ if .IsNode }}
+				{{ $url := .Url }}
 				{{ range .Site.Menus.main }}
-				<li><a href="{{ .Url }}"{{ if eq .Url "/"}} class="current-page"{{ end }}>{{ .Name }}</a></li>
+				<li><a href="{{ .Url }}"{{ if eq .Url $url }} class="current-page"{{ end }}>{{ .Name }}</a></li>
 				{{ end }}
 			{{ end }}
 			{{ if .IsPage }}
 				{{ $url := .RelPermalink }}
 				{{ range .Site.Menus.main }}
-				<li><a href="{{ .Url }}"{{ if eq .Url $url}} class="current-page"{{ end }}>{{ .Name }}</a></li>
+				<li><a href="{{ .Url }}"{{ if eq .Url $url }} class="current-page"{{ end }}>{{ .Name }}</a></li>
 				{{ end }}
 			{{ end }}
 		</ul>
